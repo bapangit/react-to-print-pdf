@@ -1,0 +1,107 @@
+.Container {
+  height: 1414px;
+  width: 1000px;
+  background-color: white;
+  padding: 9px;
+  font-size: small;
+}
+.Box {
+  height: 100%;
+  width: 100%;
+  border: 2px solid rgb(100, 100, 100);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.Title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  padding: 8px;
+  .Item {
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.Type {
+  border-bottom: 1px solid rgb(100, 100, 100);
+  color: black;
+  padding: 8px;
+  display: flex;
+  .Branch {
+    width: calc(100% / 3);
+    border-right: 1px solid gray;
+  }
+  .Invoice {
+    width: calc(100% / 3);
+    border-right: 1px solid gray;
+    display: flex;
+    justify-content: center;
+  }
+  .Gst {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: right;
+  }
+}
+.ItemDataTable {
+  margin-left: auto;
+  margin-right: auto;
+  border-right: 1px solid rgb(100, 100, 100);
+  border-collapse: collapse;
+  width: 100%;
+  th {
+    border-bottom: 1px solid rgb(100, 100, 100);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  td {
+    border-bottom: 1px solid rgb(100, 100, 100);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-collapse: collapse;
+    text-align: center;
+  }
+}
+.InvoiceInfo {
+  border-bottom: 1px solid rgb(100, 100, 100);
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+
+  .CustomerContact {
+    flex: 2;
+  }
+  /* .ShipContact {
+      padding: 5px;
+      flex: 3;
+    } */
+  .Info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    .Row {
+      flex: 1;
+      display: flex;
+    }
+    .Col {
+      flex: 1;
+      border-left: 1px solid grey;
+      border-bottom: 1px solid grey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .Cell {
+    border-left: 2px solid grey;
+    border-bottom: 2px solid grey;
+  }
+}

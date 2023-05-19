@@ -1,0 +1,131 @@
+.Box {
+  display: grid;
+  grid-template-rows: auto max-content;
+  position: relative;
+  background: var(--fg-sidebar-bg);
+
+  .Box {
+    width: 80px;
+    background: var(--fg-sidebar-bg);
+    display: grid;
+    grid-template-rows: max-content auto max-content;
+    justify-content: center;
+
+    .ClientLogo {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 0px;
+      margin-bottom: 6px;
+      box-shadow: rgba(0, 27, 71, 0.24) 0px 1px 3px;
+      background: var(--fg-sidebar-logo-bg);
+
+      button {
+        background: var(--white);
+        padding: 5px 6px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        width: 61px;
+        height: 52px;
+        border: 0px;
+
+        &:hover,
+        &:active {
+          background-color: rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 0 2px #2c5cc5 !important;
+          cursor: pointer;
+          transform: none !important;
+        }
+
+        img {
+          width: 52px;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 80px;
+
+      li {
+        margin-bottom: 10px;
+
+        button {
+          color: rgba(255, 255, 255, 0.5);
+          display: block;
+          font-size: 24px;
+          height: 60px;
+          position: relative;
+          text-align: center;
+          width: 80px;
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          padding: 5px 0px;
+          background: transparent;
+          border: 0px;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--white);
+            cursor: pointer;
+          }
+
+          &.Active {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--white);
+            cursor: pointer;
+          }
+
+          &:active {
+            box-shadow: none !important;
+            transform: none !important;
+          }
+
+          svg {
+            justify-self: center;
+          }
+
+          span {
+            font-size: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.LogoutBox {
+  border: 1px solid var(--gray-220);
+  background: var(--red-600);
+  border-color: var(--red-600);
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 14px;
+  height: 44px;
+  width: 50px;
+  line-height: 16px;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  gap: 10px;
+  margin: 0px 0px 10px 12px;
+
+  svg {
+    height: 22px;
+    width: 22px;
+  }
+
+  span {
+    color: var(--white);
+  }
+}

@@ -1,0 +1,15 @@
+.Div {
+  background-color: #6f7e95;
+  height: 34px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 0 30px 0 rgba(82, 63, 105, 0.05);
+  border-top: 1px solid #ccc;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 12px;
+  gap: 12px;
+  align-items: center;
+  z-index: 10;
+}

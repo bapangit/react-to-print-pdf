@@ -1,0 +1,26 @@
+.Box {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: max-content auto;
+  padding-bottom: 34px;
+
+  .PageBar {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+
+    > span {
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      color: var(--Main-Dark-text-color);
+      padding-right: 12px;
+    }
+
+    .ButtonText {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+}

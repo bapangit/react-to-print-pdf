@@ -1,0 +1,859 @@
+.Box {
+  background: #f2f3f7 !important;
+  z-index: 99;
+  position: fixed;
+  top: 0px;
+  left: 80px;
+  right: 0px;
+  bottom: 0px;
+  display: grid;
+  justify-content: center;
+  overflow: auto;
+  padding: 12px;
+
+  .InvoiceBox {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 48px minmax(max-content, auto);
+    row-gap: 12px;
+
+    .Header {
+      grid-column: span 2;
+      background: #fff;
+      box-shadow: 0 0 30px 0 rgb(82 63 105 / 5%);
+      padding: 8px 12px;
+      display: grid;
+      grid-template-columns: max-content 200px auto;
+      align-items: center;
+      border-radius: 4px;
+      gap: 8px;
+
+      .HeaderBox {
+        display: grid;
+        grid-template-columns: repeat(2, max-content 180px) max-content;
+        align-items: center;
+        gap: 12px;
+        margin-left: auto;
+      }
+    }
+
+    .Sidebar {
+      background: #fff;
+      box-shadow: 0 0 30px 0 rgb(82 63 105 / 5%);
+      padding: 10px;
+      border-radius: 4px;
+      height: 400px;
+
+      .SidebarBox {
+        border: 2px solid #e7e9eb;
+        height: 100%;
+        border-radius: 4px;
+
+        .HeaderTitle {
+          display: grid;
+          grid-template-columns: repeat(2, max-content);
+          justify-content: center;
+          align-items: center;
+          padding: 7px 7px 7px 7px;
+          gap: 8px;
+          font-weight: 500;
+          font-size: 13px;
+          background: #5d6d7e;
+          border-radius: 4px 4px 0px 0px;
+          margin: -1px -1px 0px -1px;
+          color: #ffffff;
+        }
+
+        .Content {
+          display: grid;
+          grid-template-rows: auto max-content;
+          height: 91.7%;
+          gap: 8px;
+
+          .ContentForm {
+            border-top: 1px solid #ced4da;
+            display: grid;
+            grid-template-columns: max-content auto;
+            grid-auto-rows: max-content;
+
+            .ContentLabel {
+              font-size: 11px;
+              padding: 11px;
+              background: #f7f8fa;
+              border-right: 1px solid #ced4da;
+              border-bottom: 1px solid #ced4da;
+              font-weight: 600;
+            }
+
+            .ContentInputGroup {
+              padding: 2px 4px;
+              display: grid;
+              border-bottom: 1px solid #ced4da;
+            }
+          }
+
+          > button {
+            background: #25b988;
+            border: none;
+            height: 34px;
+            color: #ffffff;
+            border-radius: 4px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            margin: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.InvoiceForm {
+  display: grid;
+  background: #ffffffff;
+  box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05);
+  border-radius: 4px;
+  grid-template-rows: auto;
+  // min-height: 880px;
+  padding: 10px;
+  user-select: none !important;
+  overflow-x: hidden;
+
+  .FormTitle {
+    text-align: center;
+    border: 2px solid #5d6d7e;
+    border-bottom: 0px;
+    h4 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 2px;
+    }
+  }
+
+  .PreviewDiv {
+    border: 2px solid #5d6d7e;
+    display: grid;
+    grid-template-rows: repeat(2, max-content) minmax(max-content, auto) repeat(3, max-content);
+  }
+
+  .PreviewDiv_L1 {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr repeat(2, max-content);
+    border-bottom: 2px solid #5d6d7e;
+
+    .PreviewDiv_L1_Box1 {
+      padding: 10px;
+
+      .PreviewDiv_ShipTo {
+        display: grid;
+        grid-column: span 2;
+        grid-template-columns: max-content 200px;
+        gap: 8px;
+      }
+
+      h2 {
+        text-align: left;
+        padding: 0px;
+        font-weight: 700;
+        font-size: 14px;
+        margin-right: auto;
+        color: #283747;
+      }
+
+      h4 {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+
+      p {
+        font-size: 12px;
+        text-align: left;
+        margin-right: auto;
+
+        > strong {
+          padding-right: 4px;
+        }
+      }
+    }
+
+    .DataBox_Border {
+      height: 100%;
+      border-left: 2px solid #5d6d7e;
+    }
+
+    .PreviewDiv_L1_Box2 {
+      display: grid;
+      grid-template-rows: repeat(3, minmax(max-content, auto));
+      border-left: 2px solid #5d6d7e;
+      > p {
+        display: grid;
+        grid-template-columns: 130px max-content auto;
+        border-bottom: 2px solid #5d6d7e;
+        align-items: center;
+
+        &:last-child {
+          border-bottom: 0px !important;
+        }
+
+        strong {
+          text-align: center;
+          font-size: 14px;
+        }
+
+        input {
+          border: 0px;
+          border: 1px solid rgb(118, 118, 118);
+          padding: 4px 4px;
+          margin: 8px;
+        }
+      }
+    }
+  }
+
+  .PreviewDiv_L2 {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1.4fr max-content 1fr max-content 1fr;
+    border-bottom: 2px solid #5d6d7e;
+    gap: 12px;
+    align-items: center;
+
+    .DataBox_Border {
+      height: 100%;
+      border-left: 1px solid #bdbdbf;
+    }
+
+    > p {
+      font-size: 12px;
+      display: grid;
+      grid-template-columns: max-content auto;
+      align-items: center;
+
+      strong {
+        padding-right: 8px;
+      }
+
+      span {
+        font-size: 12px;
+        text-align: right;
+      }
+    }
+
+    .SubDiv_L1,
+    .SubDiv_L2 {
+      display: grid;
+      justify-content: space-between;
+
+      > p {
+        font-size: 12px;
+
+        strong {
+          padding-right: 8px;
+        }
+
+        span {
+          font-size: 12px;
+          text-align: right;
+        }
+      }
+    }
+
+    .SubDiv_L1 {
+      grid-template-columns: 160px 1px 220px;
+
+      > p {
+        &:nth-child(1) {
+          text-align: left;
+        }
+
+        &:nth-child(3) {
+          text-align: center;
+        }
+      }
+    }
+
+    .SubDiv_L2 {
+      grid-template-columns: 210px 1px 190px;
+
+      > p {
+        &:nth-child(1) {
+          text-align: center;
+        }
+
+        &:nth-child(3) {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .PreviewDiv_L3 {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto max-content auto max-content auto;
+    border-bottom: 2px solid #5d6d7e;
+    gap: 12px;
+
+    .DataBox_L1,
+    .DataBox_L2 {
+      display: grid;
+      grid-auto-rows: max-content;
+
+      h3 {
+        color: #283747;
+        font-size: 14px;
+        border-bottom: 1px solid #bdbdbf;
+        margin-bottom: 6px;
+        padding-bottom: 3px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        > button {
+          background: transparent;
+          border: 0px;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          color: #5867dd;
+        }
+      }
+
+      strong {
+        padding-right: 4px;
+      }
+    }
+
+    .DataBox_Border {
+      border-left: 1px solid #bdbdbf;
+    }
+
+    .DataBox_L1 {
+      h3 {
+        text-align: left;
+      }
+      p {
+        font-size: 12px;
+        text-align: left;
+      }
+    }
+
+    .DataBox_L2 {
+      h3 {
+        text-align: right;
+      }
+      p {
+        font-size: 12px;
+        text-align: right;
+      }
+    }
+  }
+
+  .PreviewDiv_L5 {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 100%;
+    border-bottom: 2px solid #5d6d7e;
+    gap: 12px;
+    justify-content: space-between;
+    > p {
+      font-size: 12px;
+
+      strong {
+        padding-right: 8px;
+      }
+
+      span {
+        font-size: 12px;
+        text-align: right;
+      }
+    }
+  }
+
+  .ItemDetailsDiv {
+    display: grid;
+    width: 100%;
+    border-bottom: 2px solid #5d6d7e;
+
+    .ItemDetailsTable {
+      height: 100%;
+      border-collapse: collapse;
+
+      th {
+        border-bottom: 2px solid #5d6d7e;
+        padding: 6px 8px 5px;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        color: #fff;
+        background: #85929e;
+        border-left: 1px solid #85929e;
+        border-right: 1px solid #85929e;
+        white-space: nowrap;
+        min-width: 60px;
+      }
+
+      tr {
+        height: max-content;
+
+        td {
+          border-right: 1px solid #d7d7da;
+          font-size: 11px;
+          padding: 6px 8px;
+          font-weight: 500;
+          text-align: left;
+          color: #34495e;
+          word-break: break-all;
+          height: 8px;
+          border-bottom: 1px solid #d7d7da;
+
+          &.Num_Data {
+            white-space: nowrap !important;
+            text-align: right;
+          }
+
+          &.Sr_Data {
+            white-space: nowrap !important;
+            width: 320px;
+          }
+
+          > input {
+            width: 100%;
+            border: 1px solid rgb(118, 118, 118);
+            padding: 2px 4px;
+          }
+        }
+      }
+
+      th,
+      td {
+        &:nth-child(2) {
+          width: 120px;
+        }
+
+        &:nth-child(3) {
+          width: 80px;
+        }
+
+        &:nth-child(4) {
+          width: 140px;
+        }
+
+        &:nth-child(5) {
+          width: 140px;
+        }
+
+        &:nth-child(6) {
+          width: 200px;
+        }
+
+        &:nth-child(7) {
+          width: 140px;
+        }
+
+        &:nth-child(8) {
+          width: 140px;
+        }
+
+        &:nth-child(9) {
+          width: 140px;
+        }
+
+        &:nth-child(10) {
+          min-width: max-content;
+        }
+      }
+
+      td {
+        &:nth-child(3) {
+          > div {
+            display: grid;
+            grid-template-columns: auto max-content;
+            height: 100%;
+
+            span {
+              background: #d6dbdf;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 0px 10px;
+              min-width: 60px;
+            }
+
+            input {
+              width: 80px !important;
+            }
+          }
+        }
+
+        &:nth-child(6) {
+          > div {
+            display: grid;
+            grid-template-columns: 70px auto;
+            height: 100%;
+            gap: 4px;
+
+            > div:nth-child(1) {
+              min-width: 70px;
+            }
+          }
+        }
+
+        &:nth-child(10) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+
+          button {
+            display: grid;
+            background: #ffffff;
+            border: 0px;
+            align-items: center;
+            justify-content: center;
+
+            &.DeleteButton {
+              > svg {
+                background: #f62f38;
+              }
+            }
+
+            > svg {
+              font-size: 26px;
+              background: #3a8f91;
+              color: #ffffff;
+              padding: 2px;
+              height: 26px;
+              width: 30px;
+              border-radius: 2px;
+            }
+          }
+        }
+
+        &.NumField {
+          text-align: right !important;
+        }
+      }
+
+      tfoot {
+        border-top: 2px solid #5d6d7e;
+        td {
+          border-bottom: 0px;
+          font-weight: 600;
+          color: #283747;
+          border-left: 1px solid #5d6d7e;
+          border-right: 1px solid #5d6d7e;
+
+          &:first-child {
+            border-left: 0px;
+          }
+          &:last-child {
+            border-right: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .TotalDetailsDiv {
+    padding: 6px;
+    display: grid;
+    grid-template-columns: 100%;
+    border-bottom: 2px solid #5d6d7e;
+    gap: 6px;
+    justify-content: space-between;
+
+    > p {
+      display: grid;
+      grid-template-columns: auto max-content;
+      font-size: 12px;
+      border-bottom: 1px solid #5d6d7e;
+      padding-bottom: 6px;
+
+      &.bText {
+        font-size: 13px;
+
+        span {
+          font-size: 13px;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0px !important;
+        padding-bottom: 2px !important;
+      }
+
+      span {
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .BottomDetailsDiv {
+    display: grid;
+    grid-template-columns: 260px auto;
+
+    .PreviewDiv_L1_Box2 {
+      display: grid;
+      grid-template-columns: 100%;
+      padding: 8px;
+      grid-auto-rows: max-content;
+      border-right: 2px solid #5d6d7e;
+      gap: 8px;
+
+      > input {
+        width: 100%;
+      }
+
+      > button {
+        font-size: 26px;
+        background: #3a8f91;
+        color: #ffffff;
+        padding: 2px;
+        height: 26px;
+        width: 100%;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0px;
+      }
+    }
+
+    .PreviewDiv_L1_Box3 {
+      display: grid;
+      grid-template-rows: auto max-content;
+
+      > p {
+        align-items: center;
+        border-top: 2px solid #5d6d7e;
+        display: grid;
+        grid-template-columns: 160px -webkit-max-content auto -webkit-max-content;
+        grid-template-columns: 160px max-content auto max-content;
+        padding-right: 8px;
+
+        strong {
+          font-size: 14px;
+          text-align: center;
+        }
+
+        .DataBox_Border {
+          border-left: 2px solid #5d6d7e;
+          height: 100%;
+        }
+
+        input {
+          border: 1px solid #767676;
+          margin: 8px 0 8px 8px;
+          padding: 4px;
+        }
+      }
+    }
+  }
+
+  .BottomDataDetailsDiv {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 12px;
+    border-top: 2px solid #5d6d7e;
+
+    .TermAndCondDetailsDiv {
+      display: grid;
+      grid-auto-rows: max-content;
+      gap: 4px;
+      padding: 10px;
+
+      &:nth-child(1) {
+        border-right: 2px solid #5d6d7e;
+      }
+
+      h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+
+      textarea {
+        width: 100%;
+        border: 1px solid rgb(118, 118, 118);
+        padding: 2px 4px;
+        height: 100px;
+        resize: none;
+      }
+    }
+  }
+
+  .PreviewDiv_Footer {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 440px auto 440px;
+    border-top: 2px solid #5d6d7e;
+    gap: 12px;
+    justify-content: space-between;
+
+    .DataBox_Border {
+      border-left: 1px solid #bdbdbf;
+    }
+
+    > p {
+      font-size: 14px;
+
+      strong {
+        padding-right: 8px;
+      }
+
+      span {
+        font-size: 12px;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.TabControl {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  margin: 8px 0px;
+
+  > button {
+    color: #5867dd;
+    border: 1px solid #5867dd;
+    padding: 5px 12px;
+    font-size: 12px;
+    background: #ffffff;
+    display: flex;
+
+    &.active {
+      color: #ffffff;
+      background: #5867dd;
+    }
+
+    &:first-child {
+      border-radius: 2px 0px 0px 2px;
+      margin-left: auto;
+    }
+
+    &:last-child {
+      border-radius: 0px 2px 2px 0px;
+      margin-right: auto;
+    }
+  }
+}
+
+.InvoiceBoxDiv {
+  display: grid;
+  grid-template-rows: max-content auto;
+}
+
+.ItemDetailsTable2 {
+  height: 100%;
+  border-collapse: collapse;
+  width: 100%;
+
+  th {
+    border-bottom: 2px solid #5d6d7e;
+    padding: 6px 8px 5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    background: #85929e;
+    border-left: 1px solid #85929e;
+    border-right: 1px solid #85929e;
+    white-space: nowrap;
+    min-width: 60px;
+  }
+
+  tr {
+    height: max-content;
+
+    td {
+      border-right: 1px solid #d7d7da;
+      font-size: 11px;
+      padding: 6px 8px;
+      font-weight: 500;
+      text-align: left;
+      color: #34495e;
+      word-break: break-all;
+      height: 8px;
+      border-bottom: 1px solid #d7d7da;
+
+      &.Num_Data {
+        white-space: nowrap !important;
+        text-align: right;
+      }
+
+      &.Sr_Data {
+        white-space: nowrap !important;
+        width: 320px;
+      }
+
+      > input {
+        width: 100%;
+        border: 1px solid rgb(118, 118, 118);
+        padding: 2px 4px;
+      }
+    }
+  }
+
+  tfoot {
+    border-top: 2px solid #5d6d7e;
+    td {
+      border-bottom: 0px;
+      font-weight: 600;
+      color: #283747;
+      border-left: 1px solid #5d6d7e;
+      border-right: 1px solid #5d6d7e;
+
+      &:first-child {
+        border-left: 0px;
+      }
+      &:last-child {
+        border-right: 0px;
+      }
+    }
+  }
+
+  button {
+    display: grid;
+    background: #ffffff;
+    border: 0px;
+    align-items: center;
+    justify-content: center;
+
+    > svg {
+      font-size: 18px !important;
+      background: #f62f38;
+      color: #ffffff;
+      padding: 2px;
+      height: 26px;
+      width: 30px;
+      border-radius: 2px;
+    }
+  }
+}
+
+.DataBox_Submit_Button {
+  padding: 8px;
+  border-top: 2px solid #5d6d7e;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  > button {
+    background-image: linear-gradient(#264966 0, #12344d 100%);
+    border: 0;
+    border-radius: 2px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    height: 32px;
+    letter-spacing: 0.5px;
+    padding: 0px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+  }
+}
